@@ -1,8 +1,9 @@
 <template>
-  <TheHeader/>
+  <TheHeader />
   <div class="content">
     <slot />
   </div>
+  <TheFooter />
 </template>
 
 <script setup>
@@ -12,5 +13,6 @@
 <style lang="scss">
   .content {
     padding-top: 95px;
+    padding-bottom: 230px;
   }
 </style>

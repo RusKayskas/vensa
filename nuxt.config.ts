@@ -4,6 +4,7 @@ export default defineNuxtConfig({
 
   css: [
     '@/assets/css/normalize.css',
+    '@/assets/css/main.scss',
     '@/assets/css/style.css',
   ],
   modules: ['@nuxt/image'],

@@ -123,7 +123,9 @@ small {
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
-
+* {
+  box-sizing: border-box;
+}
 sub,
 sup {
   font-size: 75%;
