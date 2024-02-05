@@ -1,6 +1,6 @@
 <template>
   <a class="phone" href="tel:+79163132220">
-    <img class="phone__icon" src="/img/phone.png" alt="Номер Телефона">
+    <img class="phone__icon" src="/img/phone.png" alt="Номер Телефона" width="20" height="20">
     <span class="phone__text">+7 916 313 22 20</span>
   </a>
 </template>

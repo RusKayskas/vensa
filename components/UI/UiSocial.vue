@@ -1,7 +1,7 @@
 <template>
   <div class="social">
     <a class="social__link" v-for="item in social" :key="item.alt" :href="item.href" target="_blank">
-      <img :src="`/img/${item.path}`" :alt="item.alt">
+      <img :src="`/img/${item.path}`" :alt="item.alt" width="38" height="38">
     </a>
   </div>
 </template>

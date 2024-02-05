@@ -2,7 +2,7 @@
   <header class="header">
     <div class="container header__wrapper">
       <div class="logo header__logo">
-        <img src="@/assets/img/logo.png" alt="Logo" />
+        <img src="@/assets/img/logo.png" alt="Logo" width="195" height="59" />
         <p class="logo__details">Премиум салон-красоты<br/>
           <b class="pink">в Пушкино</b></p>
       </div>

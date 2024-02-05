@@ -6,13 +6,13 @@
         в нейросети</span> <NuxtLink to="/howItWork" class="btn">как это работает</NuxtLink></h2>
       <div class="index-page__grid grid">
         <div v-for="(item, index) in itemGrid" :key="index" class="grid__item">
-          <img :src="item.src" :alt="item.alt">
+          <img :src="item.src" :alt="item.alt" width="55" height="57">
           <span v-html="item.text" />
         </div>
       </div>
     </div>
     <div class="index-page__abs">
-      <img src="/img/indexPic.png" alt="">
+      <img src="/img/indexPic.png" width="910" height="730" alt="">
     </div>
   </div>
 </template>
