@@ -5,7 +5,7 @@
         <button type="button" class="btn btn--pink">
           Записаться
         </button>
-        <template v-for="(item, index) in menu" :key="index">
+        <template v-for="item in menu" :key="item.main">
           <UiFooterNav v-if="isLinkActive(route.path, item.main)"  :footernav="item.main.submenu" />
         </template>
       </div>
