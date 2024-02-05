@@ -63,7 +63,37 @@ export const menu: TMenu[] = [
           name: 'Как добраться1'
         }
       ]
-    }
+    },
+    
+  },
+  {
+    main: {
+      to: '/brovi',
+      name: 'Брови',
+      submenu: [
+        {
+          to: '/brovi/price',
+          name: 'цены1'
+        },
+        {
+          to: '/brovi/portfolio',
+          name: 'Работы1'
+        },
+        {
+          to: '/brovi/reviews',
+          name: 'отзывы1'
+        },
+        {
+          to: '/brovi/masters',
+          name: 'Мастера1'
+        },
+        {
+          to: '/brovi/contacts',
+          name: 'Как добраться1'
+        }
+      ]
+    },
+    
   }
 ];
 

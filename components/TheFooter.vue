@@ -5,8 +5,9 @@
         <button type="button" class="btn btn--pink">
           Записаться
         </button>
-        <UiFooterNav v-if="isLinkActive(route.path, menu[0].main)"  :footernav="menu[0].main.submenu" />
-        <UiFooterNav v-if="isLinkActive(route.path, menu[1].main)"  :footernav="menu[1].main.submenu" />
+        <template v-for="(item, index) in menu" :key="index">
+          <UiFooterNav v-if="isLinkActive(route.path, item.main)"  :footernav="item.main.submenu" />
+        </template>
       </div>
       <div class="footer__right">
         <NuxtLink class="link" to="#" target="_blank">Положение о персональных данных</NuxtLink>
