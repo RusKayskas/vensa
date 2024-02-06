@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container footer__wrapper">
       <div class="footer__left">
-        <button type="button" class="btn btn--pink">
+        <button @click="open" type="button" class="btn btn--pink">
           Записаться
         </button>
         <template v-for="item in menu" :key="item.main">
@@ -12,6 +12,9 @@
       <div class="footer__right">
         <NuxtLink class="link" to="#" target="_blank">Положение о персональных данных</NuxtLink>
       </div>
+      <teleport to="body">
+        <UiModalForm v-if="isOpen"  @close="closeModal" />
+      </teleport>
     </div>
   </footer>
 </template>
@@ -19,7 +22,16 @@
 <script setup lang="ts">
   import { useRoute } from 'vue-router';
   import { menu, isLinkActive } from './UI/menu';
+  import UiModalForm from '~/components/UI/UiModalForm.vue';
   const route = useRoute();
+  import { ref } from 'vue';
+  const isOpen = ref<boolean>(false);
+  const open = () => {
+    isOpen.value = true; 
+  };
+  function closeModal() {
+    isOpen.value = false;
+  }
 </script>
 
 <style lang="scss">
