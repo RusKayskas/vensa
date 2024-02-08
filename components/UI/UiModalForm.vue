@@ -34,7 +34,7 @@
         </div>
 
         <button :disabled="!isPhoneNumberValid" class="UiModal__button btn btn--pink" type="submit">Отправить</button>
-        <input class="form-metka" type="hidden" name="metkaFF" value="">
+        <input v-model="formValues.metkaFF" class="form-metka" type="hidden" name="metkaFF" value="">
         <input class="form-city" type="hidden" name="cityFF" value="">
         <input type="hidden" class="form-descr" name="descrFF" value="">
       </form>
@@ -45,12 +45,17 @@
 <script setup lang="ts">
 import { defineEmits, ref } from 'vue';
 import axios from 'axios';
-
+import { defineProps } from 'vue';
 const emit = defineEmits(['close']);
 const modalOverflow = ref<HTMLElement | null>(null);
 const modalClose = ref<HTMLElement | null>(null);
 const formRef = ref<HTMLFormElement | null>(null);
-const isDisabled = ref<boolean>(true);
+const props = defineProps({
+  activeLink: {
+    type: String,
+    default: '',
+  },
+});
 function closeModal(event: MouseEvent) {
   if (event.target === modalOverflow.value || event.target === modalClose.value) {
     emit('close');
@@ -66,10 +71,11 @@ interface TFormValues  {
 const formValues = ref<TFormValues>({
   phone: null,
   messenger: 'GSM',
-  metkaFF: '',
+  metkaFF: props.activeLink,
   cityFF: '',
   descrFF: ''
 });
+
 
 const submitForm = async () => {
   try {
@@ -85,7 +91,10 @@ const submitForm = async () => {
 // Вычисляемое свойство для проверки соответствия номера телефона маске
 const isPhoneNumberValid = computed(() => {
   const phonePattern = /^(\+7\s\d{3}\s\d{3}-\d{2}-\d{2})$/;
-  return phonePattern.test(formValues.value.phone);
+  if (formValues.value.phone !== null) {
+    return phonePattern.test(String(formValues.value.phone));
+  }
+  return false; // Возвращаем false, если номер телефона равен null
 });
 </script>
 

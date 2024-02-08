@@ -12,20 +12,34 @@
       <div class="footer__right">
         <NuxtLink class="link" to="#" target="_blank">Положение о персональных данных</NuxtLink>
       </div>
+      {{ activeMenuLink }}
       <teleport to="body">
-        <UiModalForm v-if="isOpen"  @close="closeModal" />
+        <UiModalForm v-if="isOpen" :activeLink="activeMenuLink"  @close="closeModal" />
       </teleport>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
-  import { useRoute } from 'vue-router';
+  import { useRoute, type RouteLocationNormalized } from 'vue-router';
   import { menu, isLinkActive } from './UI/menu';
   import UiModalForm from '~/components/UI/UiModalForm.vue';
-  const route = useRoute();
+  
+  const route: RouteLocationNormalized = useRoute();
   import { ref } from 'vue';
   const isOpen = ref<boolean>(false);
+
+  const activeMenuLink: Ref<string | undefined> = computed(() => {
+    const foundMenuItem = menu.find(item => {
+      if (item.main.to === route.path) return true; // Проверка активной ссылки в главном меню
+      if (item.main.submenu) {
+        return item.main.submenu.some(subitem => subitem.to === route.path); // Проверка активной ссылки в подменю
+      }
+      return false;
+    });
+
+    return foundMenuItem?.main.name;
+  });
   const open = () => {
     isOpen.value = true; 
   };
