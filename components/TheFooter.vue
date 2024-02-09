@@ -12,7 +12,6 @@
       <div class="footer__right">
         <NuxtLink class="link" to="#" target="_blank">Положение о персональных данных</NuxtLink>
       </div>
-      {{ activeMenuLink }}
       <teleport to="body">
         <UiModalForm v-if="isOpen" :activeLink="activeMenuLink"  @close="closeModal" />
       </teleport>
@@ -28,7 +27,6 @@
   const route: RouteLocationNormalized = useRoute();
   import { ref } from 'vue';
   const isOpen = ref<boolean>(false);
-
   const activeMenuLink: Ref<string | undefined> = computed(() => {
     const foundMenuItem = menu.find(item => {
       if (item.main.to === route.path) return true; // Проверка активной ссылки в главном меню

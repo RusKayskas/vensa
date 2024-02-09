@@ -34,9 +34,9 @@
         </div>
 
         <button :disabled="!isPhoneNumberValid" class="UiModal__button btn btn--pink" type="submit">Отправить</button>
-        <input v-model="formValues.metkaFF" class="form-metka" type="hidden" name="metkaFF" value="">
-        <input class="form-city" type="hidden" name="cityFF" value="">
-        <input type="hidden" class="form-descr" name="descrFF" value="">
+        <input v-model="formValues.metkaFF" class="form-metka" type="hidden" name="metkaFF">
+        <input class="form-city" type="hidden" name="cityFF">
+        <input type="hidden" class="form-descr" name="descrFF">
       </form>
     </div>
   </div>
@@ -82,7 +82,6 @@ const submitForm = async () => {
     if (formRef.value) {
       const formData = new FormData(formRef.value);
       const response = await axios.post('/contacts.php', formData);
-      console.log('Form submitted successfully', formData);
     }
   } catch (error) {
     console.error('Error submitting form', error);

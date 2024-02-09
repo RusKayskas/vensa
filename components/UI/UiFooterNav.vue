@@ -1,24 +1,24 @@
 <template>
   <ul class="footer__nav">
-    <li class="footer__nav-item" v-for="(item, index) in footernav" :key="index">
+    <li class="footer__nav-item" v-for="(item, index) in filteredFooteNav" :key="index">
       <NuxtLink class="footer__nav-link" :to="item.to"  exactActiveClass="is-active">{{ item.name }}</NuxtLink>
     </li>
   </ul>
 </template>
 
 <script setup lang="ts">
-  type TFooterNavItem = {
-    to: string,
-    name: string,
-  } 
+import type { TMenuLink } from './menu';
+
   import { defineProps } from 'vue';
-  defineProps({
+  const props = defineProps({
     footernav: {
-      type: Array as () => TFooterNavItem[],
+      type: Array as () => TMenuLink[],
       default: () => [],
     }
-  });
-  
+  })
+  const filteredFooteNav: Ref<TMenuLink[]> = computed(() => {
+    return props.footernav.filter(item => !item.hide);
+  })
 </script>
 
 <style lang="scss">

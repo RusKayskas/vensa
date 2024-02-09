@@ -1,6 +1,7 @@
 export type TMenuLink = {
   to: string;
   name: string;
+  hide?: boolean,
   submenu?: TMenuLink[];
 };
 
@@ -33,6 +34,11 @@ export const menu: TMenu[] = [
         {
           to: '/contacts',
           name: 'Как добраться'
+        },
+        {
+          to: '/howItWork',
+          name: 'Как это работает',
+          hide: true
         }
       ]
     }
