@@ -14,15 +14,20 @@
   })
 </script>
 
-<style>
+<style lang="scss">
   .page-title {
-    font-size: 70px;
+    font-size: 34px;
     line-height: 1.2;
     margin-top: 130px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #cc6699;
+    text-align: center;
     margin-bottom: 35px;
+    @include media-sm-min {
+      text-align: left;
+      font-size: 70px;
+    }
   }
 </style>

@@ -5,6 +5,15 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'vue3-carousel-nuxt',
   ],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/css/_variables.scss" as *;',
+        },
+      },
+    },
+  },
   css: [
     '@/assets/css/normalize.css',
     '@/assets/css/main.scss',

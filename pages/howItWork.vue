@@ -34,6 +34,21 @@
   .how-it-work {
     &__content {
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      @include media-sm-min {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+      &-arrow {
+        transform: rotate(90deg);
+        @include media-sm-min {
+          transform: rotate(0deg);
+          margin-top: 140px;
+        }
+      }
     }
   }
 </style>
