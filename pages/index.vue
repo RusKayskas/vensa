@@ -22,6 +22,14 @@
 </template>
 
 <script setup lang="ts">
+  useSeoMeta({
+    title: 'Главная',
+    ogTitle: 'Главная',
+    description: 'Главная',
+    ogDescription: 'Главная',
+    ogImage: 'https://example.com/image.png',
+    twitterCard: 'summary_large_image',
+  });
   type TItemGrid = {
     src: string,
     alt: string,

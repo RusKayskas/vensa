@@ -14,17 +14,25 @@
 </template>
 
 <script setup lang="ts">
+  useSeoMeta({
+    title: 'Как это работает',
+    ogTitle: 'Как это работает',
+    description: 'Как это работает',
+    ogDescription: 'Как это работает',
+    ogImage: 'https://example.com/image.png',
+    twitterCard: 'summary_large_image',
+  });
   const card = {
     indicate: {
-      img_src: 'w1.jpg',
+      img_src: '/howItWork/w1.jpg',
       details: 'Указываешь текстом все свои предпочтения'
     },
     generate: {
-      img_src: 'w2.jpg',
+      img_src: '/howItWork/w2.jpg',
       details: 'Нейросеть неограниченно генерирует варианты'
     },
     result: {
-      img_src: 'w3.jpg',
+      img_src: '/howItWork/w3.jpg',
       details: 'выбираешь дизайн и воплощаешь идею с мастером'
     }
   };

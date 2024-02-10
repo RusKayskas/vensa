@@ -6,14 +6,14 @@
           Записаться
         </button>
         <template v-for="item in menu" :key="item.main">
-          <UiFooterNav v-if="isLinkActive(route.path, item.main)"  :footernav="item.main.submenu" />
+          <UiFooterNav v-show="isLinkActive(route.path, item.main)"  :footernav="item.main.submenu" />
         </template>
       </div>
       <div class="footer__right">
         <NuxtLink class="link" to="#" target="_blank">Положение о персональных данных</NuxtLink>
       </div>
       <teleport to="body">
-        <UiModalForm v-if="isOpen" :activeLink="activeMenuLink"  @close="closeModal" />
+        <UiModalForm v-show="isOpen" :activeLink="activeMenuLink"  @close="closeModal" />
       </teleport>
     </div>
   </footer>
