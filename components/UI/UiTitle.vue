@@ -23,5 +23,6 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #cc6699;
+    margin-bottom: 35px;
   }
 </style>

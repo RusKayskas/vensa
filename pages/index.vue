@@ -12,7 +12,11 @@
       </div>
     </div>
     <div class="index-page__abs">
-      <img src="/img/indexPic.png" width="910" height="730" alt="">
+      <picture>
+        <source srcset="/img/indexPic.webp" type="image/webp">
+        <source srcset="/img/indexPic.png" type="image/png"> 
+        <img src="/img/indexPic.png" width="910" height="724" alt="умный Маникюр">
+      </picture>
     </div>
   </div>
 </template>
@@ -56,7 +60,6 @@
       flex-direction: column;
       align-items: flex-start;
       .sub-title {
-        margin-top: 30px;
         font-size: 50px;
         line-height: 1.2;
         font-weight: 700;

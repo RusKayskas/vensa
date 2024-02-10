@@ -38,7 +38,7 @@ import type { TMenuLink } from './menu';
       letter-spacing: 0.05em;
       color: #ffffff;
       &.is-active {
-        color: #cc6699;
+        color: #999999;
       }
     }
   }
