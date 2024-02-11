@@ -3,7 +3,9 @@
     <div class="container">
       <UiTitle title="Цены" />
       <UiTabs :tab="tabs" />
-      
+      <div class="page-price__absolute">
+        <img src="/img/price.png" alt="Цены">
+      </div>
     </div>
   </div>
 </template>
@@ -41,6 +43,12 @@
 };
 </script>
 
-<style scoped>
-
+<style lang="scss">
+  .page-price {
+    &__absolute {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
 </style>
