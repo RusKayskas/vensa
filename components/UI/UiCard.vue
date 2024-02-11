@@ -28,6 +28,7 @@
 </template>
 
 <script lang="ts" setup>
+  import type { PropType } from 'vue';
   type TCard = {
     img_src: string,
     details: string,
