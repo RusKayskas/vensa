@@ -1,7 +1,8 @@
 <template>
   <div :class="[
     'UiCard',
-    { 'UiCard--content-in': isTextIn }
+    { 'UiCard--content-in': isTextIn },
+    { 'UiCard--content-in--hover': isTextIn },
     ]
   ">
     <div class="UiCard__img-wrapper">
@@ -29,7 +30,7 @@
 
 <script lang="ts" setup>
   import type { PropType } from 'vue';
-  type TCard = {
+  export type TCard = {
     img_src: string,
     details: string,
     name?: string, 
@@ -42,6 +43,10 @@
       required: true,
     },
     isTextIn: {
+      type: Boolean,
+      default: false,
+    },
+    isHoverTextIn: {
       type: Boolean,
       default: false,
     },
@@ -60,7 +65,6 @@
       margin-bottom: 20px;
       img {
         width: 100%;
-        height: 100%;
       }
     }
     &__content {
@@ -105,6 +109,17 @@
         }
         &.UiCard__content-text-name {
           font-weight: 700;
+        }
+      }
+      &--hover {
+        .UiCard__content {
+          opacity: 0;
+          transition: linear 0.2s;
+        }
+        &:hover {
+          .UiCard__content {
+            opacity: 1;
+          }
         }
       }
     }

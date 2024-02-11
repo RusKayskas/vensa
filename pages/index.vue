@@ -84,11 +84,15 @@
       }
     }
     &__abs {
-      width: fit-content;
-      position: absolute;
-      right: 0;
-      z-index: 1;
-      top: 170px;
+      display: none;
+      @include media-sm-min {
+        display: block;
+        width: fit-content;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        top: 170px;
+      }
     }
   }
   .grid {
