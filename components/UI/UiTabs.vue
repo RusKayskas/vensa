@@ -58,6 +58,14 @@ const tabNames = Object.keys(props.tab);
         display: flex;
         align-items: center;
         justify-content: space-between;
+        font-size: 14px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #ffffff;
+        @include media-sm-min {
+          font-size: 16px;
+        }
         &:not(:last-child) {
           border-bottom: 1px solid #464a54;
           padding-bottom: 10px;
@@ -66,20 +74,11 @@ const tabNames = Object.keys(props.tab);
           padding-top: 10px;
         }
         &-text {
-          font-size: 16px;
-          line-height: 1.2;
           font-weight: 300;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: #ffffff;
+          padding-right: 20px;
         }
         &-price {
-          font-size: 16px;
-          line-height: 1.2;
           font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: #ffffff;
         }
       }
     }

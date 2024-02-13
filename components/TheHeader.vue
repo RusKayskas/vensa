@@ -8,68 +8,70 @@
         <p class="logo__details">Премиум салон-красоты<br/>
           <b class="pink">в Пушкино</b></p>
       </div>
-      <div :class="['header__mobile-nav', {'header__mobile-nav--is-active': showMenu}]">
+      <div class="header__mobile-nav">
         <UiNav class="header__nav"/>
         <div class="header__socials">
           <UiPhone/>
           <UiSocial/>
         </div>
       </div>
-      <UiBurger @menuToggle="menuToggle" />
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
-  const showMenu = ref<boolean>(false);
-  const menuToggle = (event: boolean) => {
-    showMenu.value = event;
-  }
+
 </script>
 
 <style lang="scss">
   .header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 3;
-    background: #2d3038;
+    text-align: center;
     padding-top: 34px;
-    left: 0;
+    @include media-sm-min {
+      position: fixed;
+      width: 100%;
+      text-align: left;
+      top: 0;
+      z-index: 3;
+      background: #2d3038;
+      left: 0;
+    }
     &__wrapper {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    &__mobile-nav {
-      position: fixed;
-      right: -100%;
-      z-index: 10;
-      height: 100%;
-      top: 0;
-      display: flex;
-      transition: linear 0.2s;
       flex-direction: column;
-      &--is-active {
-        right: 0;
-        width: 75%;
-        background: #2d3038;
-        padding: 100px 20px 20px 30px;
-      }
       @include media-sm-min {
-        width: 100%;
-        position: relative;
-        right: auto;
         flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    
+    &__mobile-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      @include media-sm-min {
+        flex-direction: row;
+        margin-top: 0;
+        flex: 1;
       }
     }
     &__nav {
       flex: 1;
+      margin-top: 20px;
+      order: 2;
+      @include media-sm-min {
+        order: 1;
+        margin-top: 0;
+      }
     }
     &__socials {
       display: flex;
       align-items: center;
+      @include media-sm-min {
+        order: 2;
+      }
       & > * {
         &:not(:last-child) {
           margin-right: 35px;

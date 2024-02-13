@@ -27,10 +27,12 @@ import type { TMenuLink } from './menu';
     flex-wrap: wrap;
     padding-left: 0;
     gap: 15px;
+    justify-content: center;
     align-items: flex-start;
     @include media-sm-min {
       gap: 30px;
       order: 2;
+      justify-content: flex-start;
       padding-left: 40px;
       align-items: center;
     }

@@ -114,13 +114,16 @@
     &__item {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
       font-size: 16px;
       line-height: 1.2;
+      justify-content: center;
       font-weight: 300;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: #ffffff;
+      @include media-sm-min {
+        justify-content: flex-start;
+      }
       & > * {
         &:not(:last-child) {
           margin-right: 13px;

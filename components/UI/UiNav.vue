@@ -17,13 +17,14 @@
 <style lang="scss">
   .nav {
     &__list {
+      padding-left: 0;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       justify-content: center;
-      &-item {
-        &:not(:last-child) {
-          margin-right: 14px;
-        }
+      gap: 14px;
+      @include media-sm-min {
+        padding-left: 30px;
       }
     }
   }

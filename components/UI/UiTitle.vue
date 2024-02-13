@@ -18,7 +18,6 @@
   .page-title {
     font-size: 34px;
     line-height: 1.2;
-    margin-top: 130px;
     width: 100%;
     font-weight: 700;
     text-transform: uppercase;
@@ -29,6 +28,7 @@
     @include media-sm-min {
       text-align: left;
       font-size: 70px;
+      margin-top: 130px;
     }
   }
 </style>

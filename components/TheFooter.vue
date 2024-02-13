@@ -76,6 +76,15 @@
       }
     }
     &__right {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 30px;
+      @include media-sm-min {
+        margin-top: 0;
+        width: fit-content;
+        display: inline-block;
+      }
       .link {
         font-size: 10px;
         line-height: 1.2;
