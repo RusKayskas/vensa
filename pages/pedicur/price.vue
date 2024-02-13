@@ -11,6 +11,7 @@
 </template>
 
 <script setup lang="ts">
+
  const tabs = {
   'Педикюр и покрытие': [
     { tab_text: 'Подбор дизайна  выыв с помощью нейросети', tab_price: 'Бесплатно' },
@@ -42,7 +43,6 @@
   ],
 };
 </script>
-
 <style lang="scss">
   .page-price {
     &__absolute {

@@ -11,6 +11,7 @@
 </template>
 
 <script setup lang="ts">
+
  const tabs = {
   'Маникюр и покрытие': [
     { tab_text: 'Подбор дизайна с помощью нейросети', tab_price: 'Бесплатно' },
