@@ -1,7 +1,7 @@
 <template>
   <div class="index-page">
     <div class="container index-page__wrapper">
-      <UiTitle title="умный Маникюр"/>
+      <UiTitle title="умный Педикюр"/>
       <h2 class="sub-title"><span>с генерацией дизайна<br/>
         в нейросети</span> <NuxtLink to="/howItWork" class="btn">как это работает</NuxtLink></h2>
       <div class="index-page__grid grid">

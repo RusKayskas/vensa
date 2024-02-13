@@ -31,12 +31,11 @@ const props = defineProps<{
   tab: TabsContent
 }>();
 
-const activeTab = ref<string>('Маникюр и покрытие');
+const tabNames = Object.keys(props.tab);
+const activeTab = ref<string>(tabNames.length > 0 ? tabNames[0] : '');
 const setActiveTab = (tabId: string) => {
   activeTab.value = tabId;
 };
-
-const tabNames = Object.keys(props.tab);
 </script>
 
 <style lang="scss">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+    Цена
   </div>
 </template>
 
