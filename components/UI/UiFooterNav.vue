@@ -24,11 +24,15 @@ import type { TMenuLink } from './menu';
 <style lang="scss">
   .footer__nav {
     display: flex;
-    align-items: center;
-    & > * {
-      &:not(:last-child) {
-        margin-right: 30px;
-      }
+    flex-wrap: wrap;
+    padding-left: 0;
+    gap: 15px;
+    align-items: flex-start;
+    @include media-sm-min {
+      gap: 30px;
+      order: 2;
+      padding-left: 40px;
+      align-items: center;
     }
     &-link {
       font-size: 14px;

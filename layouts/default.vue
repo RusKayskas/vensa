@@ -12,7 +12,11 @@
 
 <style lang="scss">
   .content {
-    padding-top: 95px;
-    padding-bottom: 230px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    @include media-sm-min {
+      padding-top: 95px;
+      padding-bottom: 230px;
+    }
   }
 </style>

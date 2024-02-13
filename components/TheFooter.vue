@@ -23,9 +23,8 @@
   import { useRoute, type RouteLocationNormalized } from 'vue-router';
   import { menu, isLinkActive } from './UI/menu';
   import UiModalForm from '~/components/UI/UiModalForm.vue';
-  
-  const route: RouteLocationNormalized = useRoute();
   import { ref } from 'vue';
+  const route: RouteLocationNormalized = useRoute();
   const isOpen = ref<boolean>(false);
   const activeMenuLink: Ref<string | undefined> = computed(() => {
     const foundMenuItem = menu.find(item => {
@@ -44,19 +43,37 @@
   function closeModal() {
     isOpen.value = false;
   }
+  const ccc = ref('footer')
+  const teleportDestination = computed(() => {
+    window.innerWidth <= 1000 ? ccc.value = 'header' : ccc.value = 'footer';
+  })
+ 
 </script>
 
 <style lang="scss">
   .footer {
-    position: absolute;
-    bottom: 0;
-    z-index: 2;
-    left: 0;
-    width: 100%;
     padding-bottom: 50px;
+    @include media-sm-min {
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      left: 0;
+      width: 100%;
+    }
     &__left {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      .btn {
+        width: 100%;
+        order: 2;
+        margin-top: 30px;
+        @include media-sm-min {
+          width: fit-content;
+          order: 1;
+          margin-top: 0;
+        }
+      }
     }
     &__right {
       .link {
@@ -72,6 +89,7 @@
     &__wrapper {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       justify-content: space-between;
     }
   }

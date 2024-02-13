@@ -46,9 +46,13 @@
 <style lang="scss">
   .page-price {
     &__absolute {
-      position: absolute;
-      right: 0;
-      bottom: 0;
+      display: none;
+      @include media-sm-min {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0; 
+      }
     }
   }
 </style>

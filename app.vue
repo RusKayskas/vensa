@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="nuxt-app">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -18,5 +18,11 @@ useHead({
 });
 </script>
 
-<style scoped>
+<style lang="scss">
+  .nuxt-app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 </style>

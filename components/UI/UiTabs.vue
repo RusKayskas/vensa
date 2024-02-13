@@ -41,16 +41,16 @@ const tabNames = Object.keys(props.tab);
 
 <style lang="scss">
   .UiTabs {
-    width: fit-content;
+    width: 100%;
+    @include media-sm-min {
+      width: fit-content;
+    }
     &__head {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       margin-bottom: 75px;
-      &-btn {
-        &:not(:last-child) {
-          margin-right: 14px;
-        }
-      }
+      gap: 14px;
     }
     &__body {
       width: 100%;

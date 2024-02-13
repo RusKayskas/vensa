@@ -2,7 +2,7 @@
   <div :class="[
     'UiCard',
     { 'UiCard--content-in': isTextIn },
-    { 'UiCard--content-in--hover': isTextIn },
+    { 'UiCard--content-in--hover': isHoverTextIn },
     ]
   ">
     <div class="UiCard__img-wrapper">

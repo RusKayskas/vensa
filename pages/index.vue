@@ -68,18 +68,27 @@
       flex-direction: column;
       align-items: flex-start;
       .sub-title {
-        font-size: 50px;
+        font-size: 30px;
         line-height: 1.2;
         font-weight: 700;
+        text-align: center;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         color: #ffffff;
+        @include media-sm-min {
+          font-size: 50px;
+          text-align: left;
+        }
         .btn {
           display: inline-flex;
           border-color: #cc6699;
           color: #cc6699;
           position: relative;
-          top: -12px;
+          margin-top: 20px;
+          @include media-sm-min {
+            top: -12px;
+            margin-top: 0;
+          }
         }
       }
     }

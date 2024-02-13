@@ -19,6 +19,7 @@
     font-size: 34px;
     line-height: 1.2;
     margin-top: 130px;
+    width: 100%;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
