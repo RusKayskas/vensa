@@ -34,12 +34,16 @@ const settings = ref({
   itemsToShow: 1,
   snapAlign: 'center',
   breakpoints: {
-    700: {
-      itemsToShow: 3,
-      snapAlign: 'center',
+    900: {
+      itemsToShow: 2.5,
+      snapAlign: 'start',
     },
     1100: {
       itemsToShow: 4,
+      snapAlign: 'start',
+    },
+    1700: {
+      itemsToShow: 5,
       snapAlign: 'start',
     },
   },

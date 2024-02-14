@@ -6,7 +6,7 @@
         в нейросети</span> <NuxtLink to="/howItWork" class="btn">как это работает</NuxtLink></h2>
       <div class="index-page__grid grid">
         <div v-for="(item, index) in itemGrid" :key="index" class="grid__item">
-          <img :src="item.src" :alt="item.alt" width="55" height="57">
+          <img :src="item.src" :alt="item.alt" loading="lazy" width="55" height="57">
           <span v-html="item.text" />
         </div>
       </div>

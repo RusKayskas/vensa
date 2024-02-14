@@ -3,7 +3,7 @@
     <div class="container header__wrapper">
       <div class="logo header__logo">
         <NuxtLink to="/">
-          <img src="~/assets/img/logo.png" alt="Logo" width="195" height="59" />
+          <img src="~/assets/img/logo.png" loading="lazy" alt="Logo" width="195" height="59" />
         </NuxtLink>        
         <p class="logo__details">Премиум салон-красоты<br/>
           <b class="pink">в Пушкино</b></p>

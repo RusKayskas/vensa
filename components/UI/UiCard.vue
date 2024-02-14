@@ -6,7 +6,7 @@
     ]
   ">
     <div class="UiCard__img-wrapper">
-      <img :src="`/img/${card.img_src}`" :alt="altName" width="356" height="357">
+      <img :src="`/img/${card.img_src}`" :alt="altName" loading="lazy" width="356" height="357">
     </div>
     <div class="UiCard__content">
       <div class="UiCard__content-text">
@@ -60,12 +60,9 @@
   .UiCard {
     position: relative;
     max-width: 356px;
-    width: 100%;
+    width: fit-content;
     &__img-wrapper {
       margin-bottom: 20px;
-      img {
-        width: 100%;
-      }
     }
     &__content {
       &-text {

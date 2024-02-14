@@ -4,7 +4,7 @@
       <UiTitle title="Цены" />
       <UiTabs :tab="tabs" />
       <div class="page-price__absolute">
-        <img src="/img/price.png" alt="Цены">
+        <img src="/img/price.png" loading="lazy" alt="Цены">
       </div>
     </div>
   </div>

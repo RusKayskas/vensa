@@ -66,7 +66,10 @@
       z-index: 2;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      @include media-sm-min {
+        align-items: flex-start;
+      }
       .sub-title {
         font-size: 30px;
         line-height: 1.2;

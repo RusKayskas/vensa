@@ -64,6 +64,10 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+      justify-content: center;
+      @include media-sm-min {
+        justify-content: flex-start;
+      }
       .btn {
         width: 100%;
         order: 2;
@@ -99,7 +103,10 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: center;
+      @include media-sm-min {
+        justify-content: space-between;
+      }
     }
   }
 </style>
